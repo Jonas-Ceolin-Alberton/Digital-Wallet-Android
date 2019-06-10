@@ -1,11 +1,8 @@
 package com.digital.api.entity;
 
-import java.time.LocalDate;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Movimentacao {
@@ -13,19 +10,34 @@ public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
+	private TipoMovimentacao tipoMovimentacao;
 	private Double valor;
-	
-	private String tipoMovimentacao;
-	
+	@OneToOne
+	@JoinColumn
+	private Origem tipoOrigem;
 
-	
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public TipoMovimentacao getTipoMovimentacao() {
+		return tipoMovimentacao;
+	}
+
+	public void setTipoMovimentacao(TipoMovimentacao tipoMovimentacao) {
+		this.tipoMovimentacao = tipoMovimentacao;
+	}
+
+	public Origem getTipoOrigem() {
+		return tipoOrigem;
+	}
+
+	public void setTipoOrigem(Origem tipoOrigem) {
+		this.tipoOrigem = tipoOrigem;
 	}
 
 	public Double getValor() {
@@ -36,42 +48,8 @@ public class Movimentacao {
 		this.valor = valor;
 	}
 
-	public String getTipoMovimentacao() {
-		return tipoMovimentacao;
+	public enum TipoMovimentacao {
+		RECEITA, DESPESA
 	}
-
-	public void setTipoMovimentacao(String tipoMovimentacao) {
-		this.tipoMovimentacao = tipoMovimentacao;
-	}
-
-	public LocalDate getData() {
-		return data;
-	}
-
-	public void setData(LocalDate data) {
-		this.data = data;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
-	private LocalDate data;
-	
-	private String descricao;
-
-	private Long idUsuario;
 }
 

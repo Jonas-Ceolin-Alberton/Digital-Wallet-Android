@@ -18,45 +18,34 @@ import com.digital.api.entity.Movimentacao;
 import com.digital.api.services.MovimentacaoService;
 
 @RestController
-@RequestMapping(path = "/api/movimentacao")
+@CrossOrigin
+@RequestMapping(path = "/movimentacoes")
 public class MovimentacaoController {
 
 	@Autowired
 	private MovimentacaoService movimentacaoService;
-	
-	@GetMapping(path = "/receitas/{id}")
-	public ResponseEntity<List<Movimentacao>> listarReceitasPorIdUsuario(@PathVariable(name = "id") Long id) {
-		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-				.body(this.movimentacaoService.listarReceitasPorUsuario(id));
-	}
-	
-	@GetMapping(path = "/{id}")
-	public ResponseEntity<List<Movimentacao>> listarMovimentacoesPorUsuario(@PathVariable(name = "id") Long id) {
-		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-				.body(this.movimentacaoService.listarMovimentacoesPorUsuario(id));
-	}
-	
 
-	@GetMapping(path = "/despesas/{id}")
-	public ResponseEntity<List<Movimentacao>> listarDespesaPorIdUsuario(@PathVariable(name = "id") Long id) {
-		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-				.body(this.movimentacaoService.listarDespesasPorUsuario(id));
+
+	@GetMapping()
+	public ResponseEntity<Iterable<Movimentacao>> buscarTodos() {
+		return ResponseEntity.ok()
+				.body(this.movimentacaoService.getAll());
 	}
 	
+	@GetMapping(path = "/receitas")
+	public ResponseEntity<List<Movimentacao>> buscarReceitas() {
+		return ResponseEntity.ok()
+				.body(this.movimentacaoService.getReceitas());
+	}
 	
-	@CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
+	@GetMapping(path = "/despesas")
+	public ResponseEntity<List<Movimentacao>> buscarDespesas() {
+		return ResponseEntity.ok()
+				.body(this.movimentacaoService.getDespesas());
+	}
+
 	@PostMapping
-	public Movimentacao salvar(@RequestBody Movimentacao movin) {
-		return this.movimentacaoService.salvar(movin);
+	public Movimentacao salvar(@RequestBody Movimentacao movimentacao) {
+		return this.movimentacaoService.salvar(movimentacao);
 	}
-
-	@CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
-	@DeleteMapping(path = "/{id}")
-	public boolean deletar(@PathVariable(name = "id") Long id) {
-		return this.movimentacaoService.deletar(id);
-	}
-	
 }

@@ -9,9 +9,6 @@ import com.digital.api.entity.Movimentacao;
 public interface MovimentacaoRepository extends PagingAndSortingRepository<Movimentacao, Long>{
 
 	
-	List<Movimentacao> findByIdUsuarioAndTipoMovimentacao(Long idUsuario, String tipo);
-	
-	List<Movimentacao> findByIdUsuario(Long idUsuario);
-	
-		
+	List<Movimentacao> findByTipoMovimentacao(Movimentacao.TipoMovimentacao tipo);
+
 }
