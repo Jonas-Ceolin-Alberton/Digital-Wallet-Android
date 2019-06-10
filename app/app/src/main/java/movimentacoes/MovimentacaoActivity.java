@@ -28,6 +28,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
 
         Movimentacao mov =  new Movimentacao();
         mov.setTipoMovimentacao(Movimentacao.TipoMovimentacao.DESPESA);
+
     }
 
 }
