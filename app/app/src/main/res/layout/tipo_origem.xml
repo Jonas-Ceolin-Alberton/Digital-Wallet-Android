@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:background="#C5E1A5"
+    android:id="@+id/tipoOrigem"
+    >
 
 
         <TextView
@@ -34,19 +37,25 @@
             android:id="@+id/salvarButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Salvar"/>
+            android:text="Salvar"
+            android:background="@drawable/botao"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/limparButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Limpar"/>
+            android:text="Limpar"
+            android:background="@drawable/botao"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/voltarButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Voltar" />
+            android:text="Voltar"
+            android:background="@drawable/botao"
+            android:textColor="#FFFFFF"/>
 
     </LinearLayout>
 
