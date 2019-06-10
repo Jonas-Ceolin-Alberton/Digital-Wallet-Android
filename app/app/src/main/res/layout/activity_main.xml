@@ -5,11 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="#C5E1A5"
+    android:id="@+id/mainLayout">
 
-    <Button
-        android:id="@+id/button2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Digital Wallet"
+        android:textSize="45sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/iniciarButton"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/botao"
+        android:fontFamily="monospace"
+        android:text="Iniciar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    </LinearLayout>
+
 </LinearLayout>
