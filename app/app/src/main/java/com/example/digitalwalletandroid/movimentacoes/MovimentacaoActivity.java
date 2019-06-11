@@ -14,7 +14,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movimentacao);
+        setContentView(R.layout.activity_movimentacao);
 
         array_spinner = new String[2];
         array_spinner[0]="Receita";

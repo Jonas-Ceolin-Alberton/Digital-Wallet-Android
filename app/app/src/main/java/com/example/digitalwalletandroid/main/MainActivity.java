@@ -1,5 +1,6 @@
 package com.example.digitalwalletandroid.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.example.digitalwalletandroid.R;
+import com.example.digitalwalletandroid.despesas.Despesas;
+import com.example.digitalwalletandroid.inicio.InicioActivity;
+import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
+import com.example.digitalwalletandroid.movimentacoes.MovimentacaoActivity;
+import com.example.digitalwalletandroid.origem.Origem;
+import com.example.digitalwalletandroid.origem.OrigemActivity;
+
+import receitas.Receitas;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,8 +38,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, MovimentacaoActivity.class));
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -80,16 +88,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_receitas) {
-            // Handle the camera action
+        if (id == R.id.nav_movimentacoes) {
+            startActivity(new Intent(MainActivity.this, Movimentacao.class));
+        } else if (id == R.id.nav_receitas) {
+            startActivity(new Intent(MainActivity.this, Receitas.class));
         } else if (id == R.id.nav_despesas) {
-
+            startActivity(new Intent(MainActivity.this, Despesas.class));
         } else if (id == R.id.nav_cadastroMovimentacoes) {
-
+            startActivity(new Intent(MainActivity.this, MovimentacaoActivity.class));
         } else if (id == R.id.nav_cadastroOrigens) {
-
-        } else if (id == R.id.nav_movimentacoes) {
-
+            startActivity(new Intent(MainActivity.this, OrigemActivity.class));
+        } else if (id == R.id.nav_origens) {
+            startActivity(new Intent(MainActivity.this, Origem.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
