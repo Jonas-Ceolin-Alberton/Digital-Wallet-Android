@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".movimentacoes.MovimentacaoActivity"
+            android:name=".MovimentacaoActivity"
             android:label="@string/cadastroMovimentacoes"
             android:theme="@style/AppTheme">
             <intent-filter>

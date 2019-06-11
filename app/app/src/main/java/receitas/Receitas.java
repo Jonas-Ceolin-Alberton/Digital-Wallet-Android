@@ -12,6 +12,7 @@ public class Receitas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receitas);
 
+        //Cadastro
 
 
     }

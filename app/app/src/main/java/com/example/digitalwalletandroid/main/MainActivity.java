@@ -3,7 +3,6 @@ package com.example.digitalwalletandroid.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,9 +16,8 @@ import android.view.Menu;
 
 import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.despesas.Despesas;
-import com.example.digitalwalletandroid.inicio.InicioActivity;
 import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
-import com.example.digitalwalletandroid.movimentacoes.MovimentacaoActivity;
+import com.example.digitalwalletandroid.MovimentacaoActivity;
 import com.example.digitalwalletandroid.origem.Origem;
 import com.example.digitalwalletandroid.origem.OrigemActivity;
 

@@ -1,4 +1,4 @@
-package com.example.digitalwalletandroid.movimentacoes;
+package com.example.digitalwalletandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.digitalwalletandroid.R;
+import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
 
 public class MovimentacaoActivity extends AppCompatActivity{
 

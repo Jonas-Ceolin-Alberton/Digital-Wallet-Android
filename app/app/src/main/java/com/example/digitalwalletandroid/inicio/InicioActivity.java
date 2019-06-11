@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.digitalwalletandroid.R;
-import com.example.digitalwalletandroid.movimentacoes.MovimentacaoActivity;
+import com.example.digitalwalletandroid.MovimentacaoActivity;
 
 public class InicioActivity extends AppCompatActivity {
 
