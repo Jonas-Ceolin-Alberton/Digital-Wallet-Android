@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_receitas"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Receitas" />
+        <item
+            android:id="@+id/nav_despesas"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Despesas" />
+        <item
+            android:id="@+id/nav_cadastroMovimentacoes"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Cadastro de Movimentações" />
+        <item
+            android:id="@+id/nav_cadastroOrigens"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Cadastro de Origens" />
+        <item
+            android:id="@+id/nav_movimentacoes"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Movimentações" />
+    </group>
+
+</menu>
