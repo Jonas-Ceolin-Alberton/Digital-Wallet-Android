@@ -14,12 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-import com.example.digitalwalletandroid.MovimentacoesActivity;
+import com.example.digitalwalletandroid.movimentacoes.MovimentacoesActivity;
 import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.despesas.DespesasActivity;
-import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
-import com.example.digitalwalletandroid.MovimentacaoActivity;
-import com.example.digitalwalletandroid.origem.Origem;
+import com.example.digitalwalletandroid.movimentacoes.MovimentacaoActivity;
 import com.example.digitalwalletandroid.origem.OrigemActivity;
 import com.example.digitalwalletandroid.origem.OrigensActivity;
 

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MovimentacaoActivity"
+            android:name=".movimentacoes.MovimentacaoActivity"
             android:label="@string/cadastroMovimentacoes"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MovimentacoesActivity"
+            android:name=".movimentacoes.MovimentacoesActivity"
             android:label="@string/movimentacoes"
             android:theme="@style/AppTheme">
             <intent-filter>
