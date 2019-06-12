@@ -14,12 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.digitalwalletandroid.MovimentacoesActivity;
 import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.despesas.DespesasActivity;
 import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
 import com.example.digitalwalletandroid.MovimentacaoActivity;
 import com.example.digitalwalletandroid.origem.Origem;
 import com.example.digitalwalletandroid.origem.OrigemActivity;
+import com.example.digitalwalletandroid.origem.OrigensActivity;
 
 import receitas.ReceitasActivity;
 
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_movimentacoes) {
-            startActivity(new Intent(MainActivity.this, Movimentacao.class));
+            startActivity(new Intent(MainActivity.this, MovimentacoesActivity.class));
         } else if (id == R.id.nav_receitas) {
             startActivity(new Intent(MainActivity.this, ReceitasActivity.class));
         } else if (id == R.id.nav_despesas) {
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_cadastroOrigens) {
             startActivity(new Intent(MainActivity.this, OrigemActivity.class));
         } else if (id == R.id.nav_origens) {
-            startActivity(new Intent(MainActivity.this, Origem.class));
+            startActivity(new Intent(MainActivity.this, OrigensActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
