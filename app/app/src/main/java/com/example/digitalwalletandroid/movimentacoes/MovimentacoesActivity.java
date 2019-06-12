@@ -17,9 +17,9 @@ public class MovimentacoesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movimentacao);
 
-        Movimentacao mov1 = new Movimentacao();
-        Movimentacao mov2 = new Movimentacao();
-        Movimentacao mov3 = new Movimentacao();
+        Movimentacao mov1 = new Movimentacao(1);
+        Movimentacao mov2 = new Movimentacao(2);
+        Movimentacao mov3 = new Movimentacao(3);
 
         List<Movimentacao> movimentacoes = Arrays.asList(mov1, mov2, mov3);
 

@@ -11,6 +11,10 @@ public class Movimentacao{
     private TipoMovimentacao tipoMovimentacao;
     private Origem tipoOrigem;
 
+    public Movimentacao(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
