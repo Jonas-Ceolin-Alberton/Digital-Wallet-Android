@@ -4,6 +4,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-public class MovimentacaoService {
+import com.example.digitalwalletandroid.util.AbstractService;
 
+public class MovimentacaoService extends AbstractService<Movimentacao> {
+
+    public MovimentacaoService() {
+        super("/movimentacoes");
+    }
 }

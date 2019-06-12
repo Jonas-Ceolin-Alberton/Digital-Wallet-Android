@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        MovimentacaoService servie = new MovimentacaoService();
+
+         List<Movimentacao>  lista =  servie.getAll();
+         lista.size();
+
     }
 
     @Override
