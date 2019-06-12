@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.origem.Origem;
 
-public class Movimentacao extends AppCompatActivity {
+public class Movimentacao{
     private Integer id;
     private TipoMovimentacao tipoMovimentacao;
     private Origem tipoOrigem;
@@ -39,12 +39,4 @@ public class Movimentacao extends AppCompatActivity {
        RECEITA, DESPESA
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.movimentacao);
-
-
-
-    }
 }

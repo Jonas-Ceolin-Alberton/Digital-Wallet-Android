@@ -15,13 +15,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.example.digitalwalletandroid.R;
-import com.example.digitalwalletandroid.despesas.Despesas;
+import com.example.digitalwalletandroid.despesas.DespesasActivity;
 import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
 import com.example.digitalwalletandroid.MovimentacaoActivity;
 import com.example.digitalwalletandroid.origem.Origem;
 import com.example.digitalwalletandroid.origem.OrigemActivity;
 
-import receitas.Receitas;
+import receitas.ReceitasActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_movimentacoes) {
             startActivity(new Intent(MainActivity.this, Movimentacao.class));
         } else if (id == R.id.nav_receitas) {
-            startActivity(new Intent(MainActivity.this, Receitas.class));
+            startActivity(new Intent(MainActivity.this, ReceitasActivity.class));
         } else if (id == R.id.nav_despesas) {
-            startActivity(new Intent(MainActivity.this, Despesas.class));
+            startActivity(new Intent(MainActivity.this, DespesasActivity.class));
         } else if (id == R.id.nav_cadastroMovimentacoes) {
             startActivity(new Intent(MainActivity.this, MovimentacaoActivity.class));
         } else if (id == R.id.nav_cadastroOrigens) {

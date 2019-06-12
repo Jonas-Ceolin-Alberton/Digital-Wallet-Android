@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".movimentacoes.Movimentacao"
+            android:name=".MovimentacoesActivity"
             android:label="@string/movimentacoes"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".origem.Origem"
+            android:name=".origem.OrigensActivity"
             android:label="@string/origens"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="receitas.Receitas"
+            android:name="receitas.ReceitasActivity"
             android:label="@string/receitas"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -71,7 +71,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".despesas.Despesas"
+            android:name=".despesas.DespesasActivity"
             android:label="@string/despesas"
             android:theme="@style/AppTheme">
             <intent-filter>

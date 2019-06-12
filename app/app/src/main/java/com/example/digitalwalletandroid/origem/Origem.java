@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.digitalwalletandroid.R;
 
-public class Origem extends AppCompatActivity {
+public class Origem{
     private Integer id;
     private String nome;
 
@@ -25,12 +25,4 @@ public class Origem extends AppCompatActivity {
         this.nome = nome;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.origem);
-
-
-
-    }
 }
