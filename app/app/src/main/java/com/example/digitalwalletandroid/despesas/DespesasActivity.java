@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.digitalwalletandroid.R;
 
-public class Despesas extends AppCompatActivity {
+public class DespesasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
