@@ -9,11 +9,24 @@
     tools:context=".main.MainActivity"
     android:background="#C5E1A5">
 
-    <ListView
-        android:id="@+id/origensListView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </ListView>
+        <ListView
+            android:id="@+id/origensListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+        </ListView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabOrigens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:tint="#FFFFFF"
+            app:srcCompat="@android:drawable/ic_input_add"/>
+    </FrameLayout>
 </LinearLayout>

@@ -89,14 +89,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_movimentacoes) {
             startActivity(new Intent(MainActivity.this, MovimentacoesActivity.class));
-        } else if (id == R.id.nav_receitas) {
-            startActivity(new Intent(MainActivity.this, ReceitasActivity.class));
-        } else if (id == R.id.nav_despesas) {
-            startActivity(new Intent(MainActivity.this, DespesasActivity.class));
-        } else if (id == R.id.nav_cadastroMovimentacoes) {
-            startActivity(new Intent(MainActivity.this, MovimentacaoActivity.class));
-        } else if (id == R.id.nav_cadastroOrigens) {
-            startActivity(new Intent(MainActivity.this, OrigemActivity.class));
         } else if (id == R.id.nav_origens) {
             startActivity(new Intent(MainActivity.this, OrigensActivity.class));
         }
