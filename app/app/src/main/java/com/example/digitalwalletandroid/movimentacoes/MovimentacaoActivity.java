@@ -29,7 +29,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MovimentacaoActivity extends AppCompatActivity{
+public class MovimentacaoActivity extends AppCompatActivity {
 
     private String tipoMovimentacao[];
     private List<String> origemsString;
@@ -52,9 +52,8 @@ public class MovimentacaoActivity extends AppCompatActivity{
 
         // Cria o array com as opcoes de tipo de moviemtacao
         tipoMovimentacao = new String[2];
-        tipoMovimentacao[0]="Receita";
-        tipoMovimentacao[1]="Despesa";
-
+        tipoMovimentacao[0] = "Receita";
+        tipoMovimentacao[1] = "Despesa";
 
 
         // atribui o array ao xml
@@ -68,7 +67,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
 
 
         // ouvir botao salvar click
-        salvarButton =  findViewById(R.id.salvarButton);
+        salvarButton = findViewById(R.id.salvarButton);
         valorEditText = findViewById(R.id.valorEditText);
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +92,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
             }
         }
 
-        movimentacao =  new Movimentacao();
+        movimentacao = new Movimentacao();
         movimentacao.setValor(Double.valueOf(Double.parseDouble(valor)));
         movimentacao.setTipoOrigem(or);
         movimentacao.setTipoMovimentacao(Movimentacao.TipoMovimentacao.DESPESA);
@@ -102,8 +101,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
     }
 
 
-
-    class SalvarMovimentacaoAsync extends  AsyncTask<Void, Void, JSONObject> {
+    class SalvarMovimentacaoAsync extends AsyncTask<Void, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(Void... voids) {
             MovimentacaoService service = new MovimentacaoService();
@@ -130,17 +128,6 @@ public class MovimentacaoActivity extends AppCompatActivity{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     class BuscarOrigemsAsync extends AsyncTask<Void, Void, JSONArray> {
         @Override
         protected JSONArray doInBackground(Void... voids) {
@@ -163,8 +150,8 @@ public class MovimentacaoActivity extends AppCompatActivity{
 
         @Override
         protected void onPostExecute(JSONArray listaJSON) {
-            origemsString =  new ArrayList<>();
-            origemsObject =  new ArrayList<>();
+            origemsString = new ArrayList<>();
+            origemsObject = new ArrayList<>();
             try {
                 for (int i = 0; i < listaJSON.length(); i++) {
 
@@ -184,7 +171,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        }
     }
-}
 
 }
