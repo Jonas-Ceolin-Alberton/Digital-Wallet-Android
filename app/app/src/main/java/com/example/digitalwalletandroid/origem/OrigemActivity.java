@@ -68,7 +68,6 @@ public class OrigemActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONObject listaJSON) {
-            listaJSON.length();
         }
     }
 }

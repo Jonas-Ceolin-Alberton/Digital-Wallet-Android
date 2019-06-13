@@ -9,7 +9,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class MovimentacaoService  {
-    String url = "http://192.168.0.101:8080";
+    String url = "http://172.20.10.7:8080";
     String PATH = "/movimentacoes";
     MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -30,6 +30,12 @@ public class MovimentacaoService  {
                 .build();
     }
 
+    public Request getRequestGet() {
+        return new Request.Builder()
+                .url(url.concat(PATH))
+                .get()
+                .build();
+    }
 
 
 }

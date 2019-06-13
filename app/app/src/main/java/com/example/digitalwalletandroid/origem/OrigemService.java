@@ -7,7 +7,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class OrigemService  {
-    String url = "http://192.168.0.101:8080";
+    String url = "http://172.20.10.7:8080";
     String PATH = "/origem";
     MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
