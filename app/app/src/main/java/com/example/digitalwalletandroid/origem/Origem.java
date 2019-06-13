@@ -4,8 +4,8 @@ public class Origem{
     private Long id;
     private String nome;
 
-    public  Origem(String _nome){
-        this.nome = _nome;
+    public  Origem(String nome){
+        this.nome = nome;
     }
 
     public  Origem(){
