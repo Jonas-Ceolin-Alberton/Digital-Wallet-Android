@@ -28,7 +28,7 @@ public class MovimentacoesAdapter extends ArrayAdapter<Movimentacao> {
         TextView tipoMovimentacaoTextView = view.findViewById(R.id.tipoMovimentacaoTextView);
         tipoMovimentacaoTextView.setText(movimentacao.getTipoMovimentacao().toString());
 
-        TextView tipoOrigemTextView = view.findViewById(R.id.tipoOrigem);
+        TextView tipoOrigemTextView = view.findViewById(R.id.tipoOrigemTextView);
         tipoOrigemTextView.setText(movimentacao.getTipoOrigem().getNome());
 
         TextView valorTextView = view.findViewById(R.id.valorTextView);
