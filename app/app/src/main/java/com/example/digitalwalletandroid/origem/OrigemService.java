@@ -1,5 +1,7 @@
 package com.example.digitalwalletandroid.origem;
 
+import com.google.gson.Gson;
+
 import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -11,7 +13,9 @@ public class OrigemService  {
 
 
     private RequestBody getJSON( Origem origem) {
-        return RequestBody.create(JSON, "{\"nome\": \"" + origem.getNome() +" \" }");
+        Gson json =  new Gson();
+        String body = json.toJson(origem);
+        return RequestBody.create(JSON, body);
     }
 
     public Request getRequestPost(Origem origem) {
