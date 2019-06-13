@@ -26,7 +26,7 @@ public class MovimentacoesAdapter extends ArrayAdapter<Movimentacao> {
         Movimentacao movimentacao = getItem(position);
 
         TextView movimentacoesTextView = view.findViewById(R.id.movimentacoesTextView);
-        movimentacoesTextView.setText(movimentacao.getId());
+        movimentacoesTextView.setText(movimentacao.getId().toString());
 
         return view;
     }

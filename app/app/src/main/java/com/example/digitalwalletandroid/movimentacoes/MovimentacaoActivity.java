@@ -72,7 +72,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
                 String origem = spinerTipoOrigem.getSelectedItem().toString();
                 String valor = valorEditText.getText().toString();
 
-                Movimentacao movimentacao =  new Movimentacao();
+//                Movimentacao movimentacao =  new Movimentacao();
 //                movimentacao
             }
         });

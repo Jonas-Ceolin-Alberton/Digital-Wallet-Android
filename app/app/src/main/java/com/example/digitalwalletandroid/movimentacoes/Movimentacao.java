@@ -7,19 +7,19 @@ import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.origem.Origem;
 
 public class Movimentacao{
-    private Integer id;
+    private Long id;
     private TipoMovimentacao tipoMovimentacao;
     private Origem tipoOrigem;
 
-    public Movimentacao(Integer id) {
+    public Movimentacao(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
