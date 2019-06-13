@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class Movimentacao {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;

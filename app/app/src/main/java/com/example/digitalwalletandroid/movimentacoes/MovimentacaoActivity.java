@@ -1,5 +1,6 @@
 package com.example.digitalwalletandroid.movimentacoes;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -30,7 +32,8 @@ import okhttp3.Response;
 public class MovimentacaoActivity extends AppCompatActivity{
 
     private String tipoMovimentacao[];
-    private String origems[];
+    private List<String> origemsString;
+    private List<Origem> origemsObject;
     private Button salvarButton;
     private EditText valorEditText;
 
@@ -39,6 +42,8 @@ public class MovimentacaoActivity extends AppCompatActivity{
 
     private ArrayAdapter origemAdapter;
     private ArrayAdapter tipoMovimimentacaoAdapter;
+
+    private Movimentacao movimentacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +64,7 @@ public class MovimentacaoActivity extends AppCompatActivity{
         spinerTipoMovimentacao.setAdapter(tipoMovimimentacaoAdapter);
 
         // lista as origems
-        buscarOrigems();
+        new BuscarOrigemsAsync().execute();
 
 
         // ouvir botao salvar click
@@ -68,63 +73,118 @@ public class MovimentacaoActivity extends AppCompatActivity{
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tipo = spinerTipoMovimentacao.getSelectedItem().toString();
-                String origem = spinerTipoOrigem.getSelectedItem().toString();
-                String valor = valorEditText.getText().toString();
-
-//                Movimentacao movimentacao =  new Movimentacao();
-//                movimentacao
+                clicouBotao();
             }
         });
 
+
     }
 
-    public void buscarOrigems() {
-        OrigemService service = new OrigemService();
-        final Request request = service.getRequestGet();
+    public void clicouBotao() {
+        String tipo = spinerTipoMovimentacao.getSelectedItem().toString();
+        String origem = spinerTipoOrigem.getSelectedItem().toString();
+        String valor = valorEditText.getText().toString();
 
-        OkHttpClient client = new OkHttpClient();
+        Origem or = new Origem();
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
+        for (Origem orig : origemsObject) {
+            if (orig.getNome().equals(origem)) {
+                or = orig;
             }
+        }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if(response.isSuccessful()) {
-                    JSONArray listaJSON =new JSONArray();
-                    try {
-                        listaJSON = new JSONArray(response.body().string());
-                        atualizarOrigem(listaJSON);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+        movimentacao =  new Movimentacao();
+        movimentacao.setValor(Double.valueOf(Double.parseDouble(valor)));
+        movimentacao.setTipoOrigem(or);
+        movimentacao.setTipoMovimentacao(Movimentacao.TipoMovimentacao.DESPESA);
+
+        new SalvarMovimentacaoAsync().execute();
     }
 
 
-    private void atualizarOrigem(JSONArray listaJSON) {
-        origems = new String[listaJSON.length()];
-        try {
-            for (int i = 0; i < listaJSON.length(); i++) {
 
-                JSONObject jsonObject = listaJSON.getJSONObject(i);
-                Integer id = Integer.parseInt(jsonObject.getString("id")) ;
-                String nome = jsonObject.getString("nome");
-                origems[i] = nome;
+    class SalvarMovimentacaoAsync extends  AsyncTask<Void, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(Void... voids) {
+            MovimentacaoService service = new MovimentacaoService();
+            final Request request = service.getRequestPost(movimentacao);
+
+            OkHttpClient client = new OkHttpClient();
+            Response response = null;
+            try {
+                response = client.newCall(request).execute();
+                return new JSONObject(response.body().string());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
 
-            spinerTipoOrigem = (Spinner) findViewById(R.id.origemSpinner);
-            origemAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, origems);
-            origemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinerTipoOrigem.setAdapter(origemAdapter);
-        } catch (JSONException e) {
-            e.printStackTrace();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject listaJSON) {
+            listaJSON.length();
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    class BuscarOrigemsAsync extends AsyncTask<Void, Void, JSONArray> {
+        @Override
+        protected JSONArray doInBackground(Void... voids) {
+            OrigemService service = new OrigemService();
+            final Request request = service.getRequestGet();
+
+            OkHttpClient client = new OkHttpClient();
+            Response response = null;
+            try {
+                response = client.newCall(request).execute();
+                return new JSONArray(response.body().string());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray listaJSON) {
+            origemsString =  new ArrayList<>();
+            origemsObject =  new ArrayList<>();
+            try {
+                for (int i = 0; i < listaJSON.length(); i++) {
+
+                    JSONObject jsonObject = listaJSON.getJSONObject(i);
+                    Origem or = new Origem();
+                    or.setId(Long.parseLong(jsonObject.getString("id")));
+                    or.setNome(jsonObject.getString("nome"));
+
+                    origemsString.add(or.getNome());
+                    origemsObject.add(or);
+                }
+
+                spinerTipoOrigem = (Spinner) findViewById(R.id.origemSpinner);
+                origemAdapter = new ArrayAdapter(MovimentacaoActivity.this, android.R.layout.simple_spinner_item, origemsString);
+                origemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinerTipoOrigem.setAdapter(origemAdapter);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+    }
+}
 
 }
