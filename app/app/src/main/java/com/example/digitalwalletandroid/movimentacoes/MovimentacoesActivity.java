@@ -6,6 +6,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.digitalwalletandroid.R;
+import com.example.digitalwalletandroid.origem.Origem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +18,20 @@ public class MovimentacoesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movimentacao);
 
-        Movimentacao mov1 = new Movimentacao(1l);
-        Movimentacao mov2 = new Movimentacao(2l);
-        Movimentacao mov3 = new Movimentacao(3l);
+        Movimentacao mov1 = new Movimentacao();
+        mov1.setTipoMovimentacao(Movimentacao.TipoMovimentacao.RECEITA);
+        mov1.setTipoOrigem(new Origem("Salário"));
+        mov1.setValor(1.0d);
+
+        Movimentacao mov2 = new Movimentacao();
+        mov2.setTipoMovimentacao(Movimentacao.TipoMovimentacao.DESPESA);
+        mov2.setTipoOrigem(new Origem("Compras"));
+        mov2.setValor(2.0d);
+
+        Movimentacao mov3 = new Movimentacao();
+        mov3.setTipoMovimentacao(Movimentacao.TipoMovimentacao.DESPESA);
+        mov3.setTipoOrigem(new Origem("Mecânico"));
+        mov3.setValor(3.0d);
 
         List<Movimentacao> movimentacoes = Arrays.asList(mov1, mov2, mov3);
 

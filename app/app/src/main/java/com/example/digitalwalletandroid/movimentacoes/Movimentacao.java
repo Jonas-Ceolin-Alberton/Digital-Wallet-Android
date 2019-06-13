@@ -1,18 +1,19 @@
 package com.example.digitalwalletandroid.movimentacoes;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
-import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.origem.Origem;
 
 public class Movimentacao{
     private Long id;
     private TipoMovimentacao tipoMovimentacao;
     private Origem tipoOrigem;
+    private Double valor;
 
-    public Movimentacao(Long id) {
-        this.id = id;
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     public Long getId() {

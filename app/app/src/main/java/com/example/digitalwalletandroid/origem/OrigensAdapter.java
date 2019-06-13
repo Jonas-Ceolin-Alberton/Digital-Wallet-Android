@@ -26,7 +26,7 @@ public class OrigensAdapter extends ArrayAdapter<Origem> {
         Origem origem = getItem(position);
 
         TextView origemTextView = view.findViewById(R.id.origemTextView);
-        origemTextView.setText(origem.getId());
+//        origemTextView.setText(origem.getId());
 
         return view;
     }

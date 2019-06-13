@@ -1,19 +1,21 @@
 package com.example.digitalwalletandroid.origem;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
-import com.example.digitalwalletandroid.R;
-
 public class Origem{
-    private Integer id;
+    private Long id;
     private String nome;
 
-    public Integer getId() {
+    public  Origem(String _nome){
+        this.nome = _nome;
+    }
+
+    public  Origem(){
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
