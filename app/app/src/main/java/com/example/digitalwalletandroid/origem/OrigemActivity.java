@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.digitalwalletandroid.R;
 
@@ -68,6 +69,7 @@ public class OrigemActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONObject listaJSON) {
+            Toast.makeText(OrigemActivity.this, "Origem salva!", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -8,11 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.digitalwalletandroid.R;
 import com.example.digitalwalletandroid.main.MainActivity;
 import com.example.digitalwalletandroid.movimentacoes.Movimentacao;
 import com.example.digitalwalletandroid.origem.Origem;
+import com.example.digitalwalletandroid.origem.OrigemActivity;
 import com.example.digitalwalletandroid.origem.OrigemService;
 
 import org.json.JSONArray;
@@ -123,7 +125,7 @@ public class MovimentacaoActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(JSONObject listaJSON) {
-            listaJSON.length();
+            Toast.makeText(MovimentacaoActivity.this, "Movimentação salva!", Toast.LENGTH_SHORT).show();
         }
     }
 
