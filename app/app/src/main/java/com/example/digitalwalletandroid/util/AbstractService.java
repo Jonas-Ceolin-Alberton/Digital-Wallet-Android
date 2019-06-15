@@ -62,34 +62,6 @@ public abstract class AbstractService<T> {
         return null;
     }
 //
-//    public T save(T objeto) {
-//        OkHttpClient httpClient = new OkHttpClient();
-//
-//
-//        FormEncoding fe = new FormEncoding.Builder()
-//                .add("name", "Lorem Ipsum")
-//                .add("occupation", "Filler Text")
-//                .build()
-//
-//        RequestBody body = RequestBody.create(MediaType.get("application/json; charset=utf-8"), json);
-//
-//        Request request = new Request.Builder()
-//                .url(URL.concat(PATH))
-//                .post(body)
-//                .build();
-//
-//        try {
-//            Response response = httpClient.newCall(request).execute();
-//            String jsonString = response.body().string();
-//            JSONObject jsonObject = new JSONObject(jsonString);
-//            return (T) jsonObject;
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }
 
 

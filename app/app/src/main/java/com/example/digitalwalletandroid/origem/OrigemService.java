@@ -1,5 +1,8 @@
 package com.example.digitalwalletandroid.origem;
 
+import android.graphics.drawable.Drawable;
+import android.provider.SyncStateContract;
+
 import com.google.gson.Gson;
 
 import okhttp3.MediaType;
